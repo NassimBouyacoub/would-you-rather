@@ -5,5 +5,17 @@ export function questions(state = {}, action) {
             ...action.questions
         }
     }
+    else if (action.type === 'ADD_RESPONSE') {
+        return {
+            ...state,
+            [action.questionId]: {
+                ...state[action.questionId],
+                [action.option]: {
+                    ...state[action.questionId][action.option],
+                    votes: state[action.questionId][action.option].votes.concat(action.user)
+                }
+            }
+        }
+    }
     return state;
 }
