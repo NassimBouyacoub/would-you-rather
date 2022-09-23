@@ -7,24 +7,26 @@ class Home extends React.Component {
         return (
             <Card>
                 <Tabs
-                    defaultActiveKey="answered"
+                    defaultActiveKey="unanswered"
                     id="uncontrolled-tab-example"
                     className="mb-3"
                     fill
                 >
                     <Tab eventKey="answered" title="Answered" >
-                        {Object.keys(this.props.users[this.props.authUser].answers).map(question =>
+                        {Object.keys(this.props.users[this.props.authUser].answers).sort((a, b) => b.timestamp - a.timestamp).map(question =>
                             <Question answered={true} key={this.props.questions[question].id} Question={this.props.questions[question]} />
                         )}
                     </Tab>
-                    <Tab eventKey="not answered" title="Not Answered">
+                    <Tab eventKey="unanswered" title="Unnswered">
                         {
                             (Object.keys(this.props.questions).filter(question =>
                                 !Object.keys(this.props.users[this.props.authUser].answers).includes(question)
                             )
-                            ).map(question=>{return(
-                                <Question answered={false} key={this.props.questions[question].id} Question={this.props.questions[question]} />
-                            )})
+                            ).sort((a, b) => b.timestamp - a.timestamp).map(question => {
+                                return (
+                                    <Question answered={false} key={this.props.questions[question].id} Question={this.props.questions[question]} />
+                                )
+                            })
                         }
                     </Tab>
                 </Tabs>
