@@ -17,7 +17,7 @@ class Leaderboard extends React.Component {
                 })).sort((a, b) => a.total - b.total).reverse().map(user =>
                     <>
                         <br />
-                        <Card key={user.name} style={{margin:"1%"}}>
+                        <Card key={user.name} style={{ margin: "1%" }}>
                             <Card.Header>
                                 {user.name}
                             </Card.Header>
@@ -28,7 +28,7 @@ class Leaderboard extends React.Component {
                                     </Col>
                                     <Col>
                                         <Card>
-                                            <Card.Title style={{border:"4mm solid green"}}>Score: {user.total}</Card.Title>
+                                            <Card.Title style={{ border: "4mm solid green" }}>Score: {user.total}</Card.Title>
                                             <Card.Body>
                                                 <p>Number of questions :</p>
                                                 {user.questionCount}

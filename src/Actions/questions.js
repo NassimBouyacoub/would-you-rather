@@ -4,3 +4,12 @@ export function getQuestions(questions) {
         questions
     }
 }
+
+export function addResponse(user, questionId, option) {
+    return {
+        type: 'ADD_RESPONSE',
+        user,
+        questionId,
+        option
+    }
+}
