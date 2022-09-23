@@ -9,25 +9,13 @@ import thunk from 'redux-thunk'
 import reducers from './Reducers/index'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import logger from './middleware/logger';
-import {
-  Routes,
-  Route,
-  BrowserRouter
-} from "react-router-dom";
-import Login from './Components/Login';
 const store = createStore(reducers, applyMiddleware(thunk, logger))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <App/>
   </Provider>
 );
 
