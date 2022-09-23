@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './Components/Header';
 import { Row, Col } from 'react-bootstrap'
-import Response from './Components/Response';
 import { getInitialData } from './Actions/all';
 import React from 'react';
 import Login from './Components/Login'
@@ -9,6 +8,7 @@ import Home from './Components/Home'
 import NewQuestion from './Components/NewQuestion';
 import { connect } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import QuestionDetails from './Components/QuestionDetails';
 
 
 class App extends React.Component {
@@ -33,19 +33,12 @@ class App extends React.Component {
                   ?
                   <>
                     <Route path="/newQuestion" element={<NewQuestion />} />
-                    <Route path="/response/*" element={<Response />} />
+                    <Route path="/question/*" element={<QuestionDetails />} />
                     <Route path="/" element={<Home />} />
                     
                   </>
                   : <Route path="*" element={<Login />} />
               }
-              {/* 
-              <Route path="/" element={
-                this.props.authUser != null
-                  ? <Home />
-                  : <Login />
-              } /> */}
-
             </Routes>
           </Col>
         </Row>
