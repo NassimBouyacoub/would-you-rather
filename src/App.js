@@ -5,6 +5,7 @@ import { getInitialData } from './Actions/all';
 import React from 'react';
 import Login from './Components/Login'
 import Home from './Components/Home'
+import Leaderboard from './Components/Leaderboard'
 import NewQuestion from './Components/NewQuestion';
 import { connect } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -34,8 +35,9 @@ class App extends React.Component {
                   <>
                     <Route path="/newQuestion" element={<NewQuestion />} />
                     <Route path="/question/*" element={<QuestionDetails />} />
+                    <Route path="/leaderboard" element={<Leaderboard />} />
                     <Route path="/" element={<Home />} />
-                    
+
                   </>
                   : <Route path="*" element={<Login />} />
               }
