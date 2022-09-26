@@ -9,11 +9,11 @@ export default function users(state = {}, action) {
         console.log(action)
         return {
             ...state,
-            [action.user]: {
-                ...[action.user],
+            [action.authUser]: {
+                ...[action.authUser],
                 answers: {
-                    ...state[action.user].answers,
-                    [action.questionId]: action.option
+                    ...state[action.authUser].answers,
+                    [action.qid]: action.answer
                 }
             }
         }

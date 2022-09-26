@@ -60,7 +60,7 @@ class QuestionDetails extends React.Component {
                                         <input type="radio" name="resp" value={"optionTwo"} /> <label>{this.props.questions[window.location.pathname.slice(10)].optionTwo.text}</label>                            <br />
                                     </div>
                                     <br />
-                                    <Link onClick={this.submit} >
+                                    <Link to={'/'} onClick={this.submit} >
                                         <Button >
                                             Submit
                                         </Button>
