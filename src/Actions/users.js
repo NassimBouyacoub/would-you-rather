@@ -8,16 +8,16 @@ export function getUsers(users) {
     };
 }
 
-export function addAnswerToUser(user, questionId, option) {
+export function addAnswerToUser(authUser, qid, answer) {
     return {
         type: "ADD_ANSWER_TO_USER",
-        user,
-        questionId,
-        option
+        authUser,
+        qid,
+        answer
     }
 }
 
-export function addQuestionToUser({id,author}) {
+export function addQuestionToUser({ id, author }) {
     return {
         type: "ADD_QUESTION_TO_USER",
         id,
@@ -25,10 +25,11 @@ export function addQuestionToUser({id,author}) {
     }
 }
 
-export function SaveQuestionAnswers(user, questionId, option) {
+export function SaveQuestionAnswers(authUser, qid, answer) {
     return dispatch => {
-        dispatch(addAnswerToUser(user, questionId, option))
-        dispatch(addResponse(user, questionId, option))
-        return saveQuestionAnswer({user, questionId, option}).catch(e => console.log(e))
+        dispatch(addAnswerToUser(authUser, qid, answer))
+        dispatch(addResponse(authUser, qid, answer))
+
+        return saveQuestionAnswer({ authUser, qid, answer }).catch(e => console.log(e))
     }
 }

@@ -8,12 +8,12 @@ export function getQuestions(questions) {
     }
 }
 
-export function addResponse(user, questionId, option) {
+export function addResponse(authUser, qid, answer) {
     return {
         type: 'ADD_RESPONSE',
-        user,
-        questionId,
-        option
+        authUser,
+        qid,
+        answer
     }
 }
 export function newQuestion(question) {
