@@ -17,5 +17,11 @@ export function questions(state = {}, action) {
             }
         }
     }
+    else if (action.type === "NEW_QUESTION") {
+        return {
+            ...state,
+            [action.question.id]: action.question
+        }
+    }
     return state;
 }

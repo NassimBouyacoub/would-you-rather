@@ -40,7 +40,7 @@ class QuestionDetails extends React.Component {
                                     <h3>Would you rather</h3>
                                     <br />
                                     <label>{this.props.questions[window.location.pathname.slice(10)].optionOne.text}</label>
-                                    <ProgressBar now={qstOne / Object.keys(this.props.users).length * 100} label={qstOne / qstTwo * 100} />
+                                    <ProgressBar now={qstOne / Object.keys(this.props.users).length * 100} label={(qstOne / Object.keys(this.props.users).length * 100).toPrecision(4) + "%"} />
                                     <label>{this.props.questions[window.location.pathname.slice(10)].optionTwo.text}</label>
                                     <br />
                                     <ProgressBar now={qstTwo / Object.keys(this.props.users).length * 100} label={(qstTwo / Object.keys(this.props.users).length * 100).toPrecision(4) + '%'} />

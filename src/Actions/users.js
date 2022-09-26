@@ -17,10 +17,18 @@ export function addAnswerToUser(user, questionId, option) {
     }
 }
 
+export function addQuestionToUser({id,author}) {
+    return {
+        type: "ADD_QUESTION_TO_USER",
+        id,
+        author
+    }
+}
+
 export function SaveQuestionAnswers(user, questionId, option) {
     return dispatch => {
         dispatch(addAnswerToUser(user, questionId, option))
         dispatch(addResponse(user, questionId, option))
-        return saveQuestionAnswer(user, questionId, option ).catch(e => console.log(e))
+        return saveQuestionAnswer({user, questionId, option}).catch(e => console.log(e))
     }
 }
