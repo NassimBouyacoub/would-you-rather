@@ -18,7 +18,15 @@ export default function users(state = {}, action) {
             }
         }
     }
-
+    else if (action.type === "ADD_QUESTION_TO_USER") {
+        return {
+            ...state,
+            [action.author]: {
+                ...state[action.author],
+                questions: state[action.author].questions.concat(action.id)
+            }
+        }
+    }
     return state;
 }
 

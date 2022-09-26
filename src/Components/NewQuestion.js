@@ -1,8 +1,21 @@
 import React from 'react'
 import { Button, Card, Row, Col, Image } from "react-bootstrap";
 import { connect } from 'react-redux';
-import { getInitialData } from '../Actions/all';
+import { addQuestion } from '../Actions/questions';
 class NewQuestion extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            optionOne: null,
+            optionTwo: null
+        }
+        this.submit = this.submit.bind(this);
+
+    }
+    submit(event) {
+       this.props.addQuestion(this.state.optionOne, this.state.optionTwo, this.props.authUser)
+    }
+
     render() {
         console.log(this.props.authUser)
         return (
@@ -16,12 +29,20 @@ class NewQuestion extends React.Component {
                         <Col>
                             <h2>Would you rather</h2>
                             <br />
-                            <input type="text" />
+                            <input
+                                type="text"
+                                name="optionOne"
+                                onChange={event => this.state.optionOne = event.target.value}
+                            />
                             <h3>or</h3>
-                            <input type="text" />
+                            <input
+                                type="text"
+                                name="optionTwo"
+                                onChange={event => this.state.optionTwo = event.target.value}
+                            />
                             <br />
                             <br />
-                            <Button>Submit</Button>
+                            <Button onClick={this.submit}>Submit</Button>
                         </Col>
                     </Row>
                 </Card.Body>
@@ -32,4 +53,4 @@ class NewQuestion extends React.Component {
 const MapStateToProps = ({ users, authUser }) => {
     return { users, authUser }
 }
-export default connect(MapStateToProps)(NewQuestion);
+export default connect(MapStateToProps,{addQuestion})(NewQuestion);
