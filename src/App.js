@@ -42,7 +42,7 @@ class App extends React.Component {
 
                   </>
                   : <>
-                    <Route path='*' element={<PageNotFound />} />
+                    <Route path='*' element={<Login />} />
                   </>
               }
             </Routes>

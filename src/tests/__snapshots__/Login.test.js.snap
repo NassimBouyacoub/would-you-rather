@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing login component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <nav
+            class="navbar navbar-expand navbar-dark bg-dark"
+          >
+            <div
+              class="container"
+            >
+              <span
+                class="navbar-brand"
+              >
+                Would you rather?
+              </span>
+              <div
+                class="me-auto navbar-nav"
+              >
+                <a
+                  aria-current="page"
+                  class="nav-link active"
+                  href="/"
+                >
+                  Home
+                </a>
+                <a
+                  class="nav-link"
+                  href="/newQuestion"
+                >
+                  New Question
+                </a>
+                <a
+                  class="nav-link"
+                  href="/leaderboard"
+                >
+                  Leaderboard
+                </a>
+              </div>
+              <div
+                class="justify-content-end navbar-collapse collapse"
+              >
+                <h2>
+                  none
+                </h2>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <br />
+      <div
+        class="row"
+        style="text-align: center;"
+      >
+        <div
+          class="col-md-4 offset-md-4"
+        >
+          <div
+            class="card"
+            style="text-align: center;"
+          >
+            <div
+              class="card-body"
+            >
+              <img
+                class="card-img"
+                src="http://www.webstickersmuraux.com/fr/img/foma288-jpg/folder/products-listado-merchant/poster-xxl-bob-leponge.jpg"
+              />
+               
+              <div
+                class="dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  class="dropdown-toggle btn btn-success"
+                  id="dropdown-basic"
+                  type="button"
+                >
+                  Choose a user
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div
+        class="row"
+        style="text-align: center;"
+      >
+        <div
+          class="col"
+        >
+          <p>
+            Created By: 
+            <a
+              href="https://fr.linkedin.com/in/nassimbouyacoub"
+            >
+              Nassim
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="card"
+        style="text-align: center;"
+      >
+        <div
+          class="card-body"
+        >
+          <img
+            class="card-img"
+            src="http://www.webstickersmuraux.com/fr/img/foma288-jpg/folder/products-listado-merchant/poster-xxl-bob-leponge.jpg"
+          />
+           
+          <div
+            class="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              class="dropdown-toggle btn btn-success"
+              id="dropdown-basic"
+              type="button"
+            >
+              Choose a user
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="card"
+      style="text-align: center;"
+    >
+      <div
+        class="card-body"
+      >
+        <img
+          class="card-img"
+          src="http://www.webstickersmuraux.com/fr/img/foma288-jpg/folder/products-listado-merchant/poster-xxl-bob-leponge.jpg"
+        />
+         
+        <div
+          class="dropdown"
+        >
+          <button
+            aria-expanded="false"
+            class="dropdown-toggle btn btn-success"
+            id="dropdown-basic"
+            type="button"
+          >
+            Choose a user
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

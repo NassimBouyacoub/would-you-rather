@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,15 @@
     ]
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "jest": "^27.5.1"
+  },
+  "jest":{
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/index.js"
+    }
   }
 }
