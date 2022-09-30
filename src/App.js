@@ -10,6 +10,7 @@ import NewQuestion from './Components/NewQuestion';
 import { connect } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import QuestionDetails from './Components/QuestionDetails';
+import PageNotFound from './Components/PageNotFound';
 
 
 class App extends React.Component {
@@ -33,13 +34,16 @@ class App extends React.Component {
                 this.props.authUser != null
                   ?
                   <>
+                    <Route path='*' element={<PageNotFound />} />
                     <Route path="/newQuestion" element={<NewQuestion />} />
                     <Route path="/question/*" element={<QuestionDetails />} />
                     <Route path="/leaderboard" element={<Leaderboard />} />
                     <Route path="/" element={<Home />} />
 
                   </>
-                  : <Route path="*" element={<Login />} />
+                  : <>
+                    <Route path='*' element={<Login />} />
+                  </>
               }
             </Routes>
           </Col>

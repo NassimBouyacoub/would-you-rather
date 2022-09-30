@@ -27,9 +27,9 @@ export function newQuestion(question) {
 export function addQuestion(optionOneText, optionTwoText, author) {
     return dispatch => {
         return saveQuestion({ optionOneText, optionTwoText, author }).then(question =>
-            (console.log(question),
+        (
             dispatch(newQuestion(question),
                 dispatch(addQuestionToUser(question)))
-            ).catch(e => console.log(e)))
+        )).catch(e => console.log(e))
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Card, Row, Col, Image } from "react-bootstrap";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addQuestion } from '../Actions/questions';
 class NewQuestion extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class NewQuestion extends React.Component {
 
     }
     submit(event) {
-       this.props.addQuestion(this.state.optionOne, this.state.optionTwo, this.props.authUser)
+        this.props.addQuestion(this.state.optionOne, this.state.optionTwo, this.props.authUser)
     }
 
     render() {
@@ -42,7 +43,10 @@ class NewQuestion extends React.Component {
                             />
                             <br />
                             <br />
-                            <Button onClick={this.submit}>Submit</Button>
+                            <Link to={'/'} onClick={this.submit}>
+                                <Button>Submit</Button>
+                            </Link>
+
                         </Col>
                     </Row>
                 </Card.Body>
@@ -53,4 +57,4 @@ class NewQuestion extends React.Component {
 const MapStateToProps = ({ users, authUser }) => {
     return { users, authUser }
 }
-export default connect(MapStateToProps,{addQuestion})(NewQuestion);
+export default connect(MapStateToProps, { addQuestion })(NewQuestion);

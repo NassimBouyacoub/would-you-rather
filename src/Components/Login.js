@@ -6,7 +6,7 @@ import { setAuthedUser } from '../Actions/authedUser'
 class Login extends React.Component {
     render() {
         return (
-            <Card style={{ textAlign: "center" }}>
+            <Card data-testid="authUser" style={{ textAlign: "center" }}>
                 <Card.Body >
                     <Card.Img src='http://www.webstickersmuraux.com/fr/img/foma288-jpg/folder/products-listado-merchant/poster-xxl-bob-leponge.jpg' />
                     &nbsp;
@@ -30,8 +30,8 @@ class Login extends React.Component {
         )
     }
 }
-const MapStateToProps = ({ users }) => {
-    return { users }
+const MapStateToProps = ({ users,authedUser }) => {
+    return { users,authedUser }
 }
 export default connect(MapStateToProps, { setAuthedUser })(Login);
 

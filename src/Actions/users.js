@@ -25,11 +25,11 @@ export function addQuestionToUser({ id, author }) {
     }
 }
 
-export function SaveQuestionAnswers(authUser, qid, answer) {
+export function SaveQuestionAnswers(authedUser, qid, answer) {
     return dispatch => {
-        dispatch(addAnswerToUser(authUser, qid, answer))
-        dispatch(addResponse(authUser, qid, answer))
+        dispatch(addAnswerToUser(authedUser, qid, answer))
+        dispatch(addResponse(authedUser, qid, answer))
 
-        return saveQuestionAnswer({ authUser, qid, answer }).catch(e => console.log(e))
+        return saveQuestionAnswer({ authedUser, qid, answer }).catch(e => console.log(e))
     }
 }

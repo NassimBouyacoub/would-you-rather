@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,11 +8,11 @@ import thunk from 'redux-thunk'
 import reducers from './Reducers/index'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import logger from './middleware/logger';
-const store = createStore(reducers, applyMiddleware(thunk, logger))
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { render } from '@testing-library/react';
+export const store = createStore(reducers, applyMiddleware(thunk, logger))
 
 
-root.render(
+render(
   <Provider store={store}>
     <App/>
   </Provider>
