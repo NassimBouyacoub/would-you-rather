@@ -6,22 +6,14 @@ import { store } from '../index'
 import { MemoryRouter } from "react-router-dom";
 
 describe("testing login component", () => {
-    render(
-        <MemoryRouter>
-            <Provider store={store}>
-                <Login />
-            </Provider>
-        </MemoryRouter>
-    )
-    it("Compare to snapshot", () => {
+    it("snapshot", () => {
+        render(
+            <MemoryRouter>
+                <Provider store={store}>
+                    <Login />
+                </Provider>
+            </MemoryRouter>
+        )
         expect(screen).toMatchSnapshot()
-    })
-    it("Verify that user is Logged", async () => {
-        // console.log(component)
-        const test = screen.getByTestId("authUser")
-        console.log(test)
-        // expect(test).toBeInTheDocument()
-        // fireEvent.click(log)
-        // expect(props.authedUser).not.toBeNull()
     })
 })
