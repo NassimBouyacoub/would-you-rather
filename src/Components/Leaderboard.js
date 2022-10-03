@@ -14,11 +14,11 @@ class Leaderboard extends React.Component {
                     answerCount: Object.values(user.answers).length,
                     questionCount: user.questions.length,
                     total: Object.values(user.answers).length + user.questions.length
-                })).sort((a, b) => a.total - b.total).reverse().map((user,index) =>
+                })).sort((a, b) => a.total - b.total).reverse().map((user, index) =>
                     <>
                         <br />
                         <Card key={index} style={{ margin: "1%" }}>
-                            <Card.Header>
+                            <Card.Header data-testid={user.name}>
                                 {user.name}
                             </Card.Header>
                             <Card.Body>
@@ -31,9 +31,9 @@ class Leaderboard extends React.Component {
                                             <Card.Title style={{ border: "4mm solid green" }}>Score: {user.total}</Card.Title>
                                             <Card.Body>
                                                 <p>Number of questions :</p>
-                                                {user.questionCount}
+                                                <label data-testid={user.name+"_question"}> {user.questionCount}</label>
                                                 <p>Number of answers :</p>
-                                                {user.answerCount}
+                                                <label data-testid={user.name+"_answers"}>  {user.answerCount}</label>
                                             </Card.Body>
                                         </Card>
                                     </Col>

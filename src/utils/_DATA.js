@@ -164,7 +164,6 @@ export function _saveQuestion(question) {
       }
 
       resolve(formattedQuestion)
-      console.log(formattedQuestion)
     }, 1000)
   })
 }

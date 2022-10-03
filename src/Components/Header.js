@@ -12,9 +12,9 @@ class Header extends React.Component {
                 <Container>
                     <Navbar.Brand>Would you rather?</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-                        <Nav.Link as={NavLink} to="/newQuestion">New Question</Nav.Link>
-                        <Nav.Link as={NavLink} to="/leaderboard" >Leaderboard</Nav.Link>
+                        <Nav.Link data-testid="HomeNav" as={NavLink} to="/">Home</Nav.Link>
+                        <Nav.Link data-testid="newQuestion" as={NavLink} to="/newQuestion">New Question</Nav.Link>
+                        <Nav.Link data-testid="Leaderboard" as={NavLink} to="/leaderboard" >Leaderboard</Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         {this.props.authUser != null

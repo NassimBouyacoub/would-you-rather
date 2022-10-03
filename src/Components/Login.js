@@ -10,16 +10,16 @@ class Login extends React.Component {
                 <Card.Body >
                     <Card.Img src='http://www.webstickersmuraux.com/fr/img/foma288-jpg/folder/products-listado-merchant/poster-xxl-bob-leponge.jpg' />
                     &nbsp;
-                    <Dropdown data-testid="authUser">
-                        <Dropdown.Toggle variant="success" id="dropdown-basic" >
+                    <Dropdown >
+                        <Dropdown.Toggle data-testid="drop" variant="success" id="dropdown-basic">
                             Choose a user
                         </Dropdown.Toggle>
                         <Dropdown.Menu  >
                             {Object.keys(this.props.users).map(user => {
-                                return <Dropdown.Item key={user} onClick={() => this.props.setAuthedUser(user)}>
-                                    <Image style={{ width: "15%" }} src={this.props.users[user].avatarURL} />
+                                return <Dropdown.Item  key={user} onClick={() => this.props.setAuthedUser(user)}>
+                                    <Image data-testid="img-login" style={{ width: "15%" }} src={this.props.users[user].avatarURL} />
                                     &nbsp;
-                                    <span>{user}</span>
+                                    <span data-testid={user}>{user}</span>
                                 </Dropdown.Item>
                             })
                             }
