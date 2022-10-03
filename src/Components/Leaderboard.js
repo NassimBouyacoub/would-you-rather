@@ -14,10 +14,10 @@ class Leaderboard extends React.Component {
                     answerCount: Object.values(user.answers).length,
                     questionCount: user.questions.length,
                     total: Object.values(user.answers).length + user.questions.length
-                })).sort((a, b) => a.total - b.total).reverse().map(user =>
+                })).sort((a, b) => a.total - b.total).reverse().map((user,index) =>
                     <>
                         <br />
-                        <Card key={user.name} style={{ margin: "1%" }}>
+                        <Card key={index} style={{ margin: "1%" }}>
                             <Card.Header>
                                 {user.name}
                             </Card.Header>

@@ -1,7 +1,7 @@
 let users = {
   sarahedo: {
     id: 'sarahedo',
-    password:'password123',
+    password: 'password123',
     name: 'Sarah Edo',
     avatarURL: "https://i.skyrock.net/1380/46221380/pics/1871447991_small_1.jpg",
     answers: {
@@ -14,7 +14,7 @@ let users = {
   },
   tylermcginnis: {
     id: 'tylermcginnis',
-    password:'abc321',
+    password: 'abc321',
     name: 'Tyler McGinnis',
     avatarURL: "https://resize-gulli.jnsmedia.fr/r/890,__ym__/img//var/jeunesse/storage/images/gulli/chaine-tv/dessins-animes/bob-l-eponge/les-personnages/bob-l-eponge/28848715-3-fre-FR/Bob-l-eponge.jpg",
     answers: {
@@ -25,7 +25,7 @@ let users = {
   },
   mtsamis: {
     id: 'mtsamis',
-    password:'xyz123',
+    password: 'xyz123',
     name: 'Mike Tsamis',
     avatarURL: "https://i.pinimg.com/474x/06/88/62/068862249066064856dc8bca91810294.jpg",
     answers: {
@@ -118,27 +118,27 @@ let questions = {
   },
 }
 
-function generateUID () {
+function generateUID() {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
-export function _getUsers () {
+export function _getUsers() {
   return new Promise((resolve) => {
-    setTimeout(() => resolve({...users}), 1000)
+    setTimeout(() => resolve({ ...users }), 1000)
   })
 }
 
-export function _getQuestions () {
+export function _getQuestions() {
   return new Promise((resolve) => {
-    setTimeout(() => resolve({...questions}), 1000)
+    setTimeout(() => resolve({ ...questions }), 1000)
   })
 }
 
-function formatQuestion ({ optionOneText, optionTwoText, author }) {
+function formatQuestion({ optionOneText, optionTwoText, author }) {
   return {
     id: generateUID(),
-    timestamp: Date.now(),
     author,
+    timestamp: Date.now(),
     optionOne: {
       votes: [],
       text: optionOneText,
@@ -150,7 +150,7 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
-export function _saveQuestion (question) {
+export function _saveQuestion(question) {
   return new Promise((resolve, reject) => {
     if (!question.optionOneText || !question.optionTwoText || !question.author) {
       reject("Please provide optionOneText, optionTwoText, and author");
@@ -164,11 +164,12 @@ export function _saveQuestion (question) {
       }
 
       resolve(formattedQuestion)
+      console.log(formattedQuestion)
     }, 1000)
   })
 }
 
-export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
+export function _saveQuestionAnswer({ authedUser, qid, answer }) {
   return new Promise((resolve, reject) => {
     if (!authedUser || !qid || !answer) {
       reject("Please provide authedUser, qid, and answer");
