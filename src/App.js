@@ -34,12 +34,12 @@ class App extends React.Component {
                 this.props.authUser != null
                   ?
                   <>
-                    <Route path='*' element={<PageNotFound />} />
+                    
                     <Route path="/newQuestion" element={<NewQuestion />} />
-                    <Route path="/question/*" element={<QuestionDetails />} />
+                    <Route path="/question/:questionId" element={<QuestionDetails />} />
                     <Route path="/leaderboard" element={<Leaderboard />} />
                     <Route path="/" element={<Home />} />
-
+                    <Route element={<PageNotFound />} />
                   </>
                   : <>
                     <Route path='*' element={<Login />} />
