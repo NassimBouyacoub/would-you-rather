@@ -6,6 +6,7 @@ import { store } from '../index'
 import { MemoryRouter } from "react-router-dom";
 import Leaderboard from "../Components/Leaderboard";
 import Login from "../Components/Login";
+
 describe("testing Leaderboard ", () => {
     it("Testing info users", () => {
         var lead = render(

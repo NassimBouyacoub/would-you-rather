@@ -19,20 +19,4 @@ describe("testing login component", () => {
         )
         expect(screen).toMatchSnapshot()
     })
-    it("Login informations are present by using fireEvent", async () => {
-        render(
-            <MemoryRouter>
-                <Provider store={store}>
-                    <Login />
-                </Provider>
-            </MemoryRouter>
-        )
-        waitFor(() => {
-            fireEvent.click(screen.getByTestId("drop"))
-            expect(screen.getByTestId("sarahedo")).toBeInTheDocument();
-            expect(screen.getByTestId("img-login")).toBeInTheDocument();
-            expect(screen.getByTestId("img-user")).toBeInTheDocument();
-        })
-    })
-    afterEach(cleanup)
-})
+   })

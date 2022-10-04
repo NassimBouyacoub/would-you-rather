@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 class Question extends React.Component {
     render() {
-        console.log(this.props.question_id)
         return (
             <Card style={{ margin: "1%", padding: "1%" }}>
                 <Card.Header style={{ textAlign: "left" }}>{this.props.users[this.props.Question.author].id} asks:</Card.Header>
