@@ -13,7 +13,7 @@ class Home extends React.Component {
                     fill
                 >
                     <Tab eventKey="answered" title="Answered" >
-                        {Object.keys(this.props.users[this.props.authUser].answers).sort((a, b) => b.timestamp - a.timestamp).map(question =>
+                        {Object.keys(this.props.users[this.props.authUser].answers).sort((a, b) => b.timestamp - a.timestamp).reverse().map(question =>
                             <Question answered={true} key={this.props.questions[question].id} Question={this.props.questions[question]} />
                         )}
                     </Tab>
@@ -22,7 +22,7 @@ class Home extends React.Component {
                             (Object.keys(this.props.questions).filter(question =>
                                 !Object.keys(this.props.users[this.props.authUser].answers).includes(question)
                             )
-                            ).sort((a, b) => b.timestamp - a.timestamp).map(question => {
+                            ).sort((b, a) => a.timestamp - b.timestamp).reverse().map(question => {
                                 return (
                                     <Question answered={false} key={this.props.questions[question].id} Question={this.props.questions[question]} />
                                 )
