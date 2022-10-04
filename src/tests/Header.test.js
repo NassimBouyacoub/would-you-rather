@@ -7,7 +7,7 @@ import { store } from '../index'
 import React from 'react'
 
 describe("Testing Navigation bar", () => {
-    
+
     //Home
     test("testing Home link", () => {
         const header = render(
@@ -20,7 +20,10 @@ describe("Testing Navigation bar", () => {
         var comp = header.getAllByTestId("HomeNav")
         comp.map(comp => expect(comp).toBeInTheDocument())
     });
-    //NewQuestion
+})
+//NewQuestion
+describe("Testing new Question Link", () => {
+
     test("testing new question link", () => {
         const header = render(
             <MemoryRouter>
@@ -29,10 +32,13 @@ describe("Testing Navigation bar", () => {
                 </Provider>
             </MemoryRouter>
         )
-        var nq =  header.getAllByTestId("newQuestion")
+        var nq = header.getAllByTestId("newQuestion")
         nq.map(comp => expect(comp).toBeInTheDocument())
     });
-    //Leaderboard
+})
+//Leaderboard
+describe("Testing LeaderBoard Link", () => {
+
     it("testing Leaderboard link", () => {
         const header = render(
             <MemoryRouter>
