@@ -36,10 +36,13 @@ class App extends React.Component {
                   <>
                     <Route path='*' element={<PageNotFound />} />
                     <Route path="/newQuestion" element={<NewQuestion />} />
-                    <Route path="/question/*" element={<QuestionDetails />} />
+                    {
+                      Object.keys(this.props.questions).includes(window.location.pathname.slice(10))
+                        ? <Route path="/question/*" element={<QuestionDetails />} />
+                        : <Route path='*' element={<PageNotFound />} />
+                    }
                     <Route path="/leaderboard" element={<Leaderboard />} />
                     <Route path="/" element={<Home />} />
-
                   </>
                   : <>
                     <Route path='*' element={<Login />} />
@@ -59,7 +62,7 @@ class App extends React.Component {
   }
 }
 
-const MapStateToProps = ({ authUser }) => {
-  return { authUser }
+const MapStateToProps = ({ authUser, questions }) => {
+  return { authUser, questions }
 }
 export default connect(MapStateToProps, { getInitialData })(App);
