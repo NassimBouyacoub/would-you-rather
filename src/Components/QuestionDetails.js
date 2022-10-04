@@ -48,9 +48,17 @@ class QuestionDetails extends React.Component {
                                         <h3>Would you rather</h3>
                                         <br />
                                         <label>{this.props.questions[window.location.pathname.slice(10)].optionOne.text}</label>
+                                        {this.props.users[this.props.authUser].answers[window.location.pathname.slice(10)]=="optionOne"
+                                        ?<p>(Your vote)</p>
+                                        :null
+                                        }
                                         <ProgressBar now={this.props.questions[window.location.pathname.slice(10)].optionOne.votes.length / Object.keys(this.props.users).length * 100} label={(this.props.questions[window.location.pathname.slice(10)].optionOne.votes.length / Object.keys(this.props.users).length * 100).toPrecision(4) + "%"} />
+                                        <br/>
                                         <label>{this.props.questions[window.location.pathname.slice(10)].optionTwo.text}</label>
-                                        <br />
+                                        {this.props.users[this.props.authUser].answers[window.location.pathname.slice(10)]=="optionTwo"
+                                        ?<p>(Your vote)</p>
+                                        :null
+                                        }
                                         <ProgressBar now={this.props.questions[window.location.pathname.slice(10)].optionTwo.votes.length / Object.keys(this.props.users).length * 100} label={(this.props.questions[window.location.pathname.slice(10)].optionTwo.votes.length / Object.keys(this.props.users).length * 100).toPrecision(4) + '%'} />
                                         <br />
                                         <Link to={`/`}>
