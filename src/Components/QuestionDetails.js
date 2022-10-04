@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Row, Col, Image, Button, ProgressBar } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import { Link,redirect } from 'react-router-dom';
 import { SaveQuestionAnswers } from '../Actions/users'
 class QuestionDetails extends React.Component {
     constructor(props) {
@@ -26,6 +26,7 @@ class QuestionDetails extends React.Component {
     }
     render() {
         const { qstOne, qstTwo } = this.state;
+
         return (
             <Card style={{ margin: "1%", padding: "1%" }}>
                 <Card.Header style={{ textAlign: "left" }}>{this.props.users[this.props.questions[window.location.pathname.slice(10)].author].name} asks:</Card.Header>
@@ -60,7 +61,7 @@ class QuestionDetails extends React.Component {
                                         <input type="radio" name="resp" value={"optionTwo"} /> <label>{this.props.questions[window.location.pathname.slice(10)].optionTwo.text}</label>                            <br />
                                     </div>
                                     <br />
-                                    <Link to={'/'} onClick={this.submit} >
+                                    <Link to={'/question/' + window.location.pathname.slice(10)} onClick={this.submit} >
                                         <Button >
                                             Submit
                                         </Button>
