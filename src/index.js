@@ -11,7 +11,6 @@ import logger from './middleware/logger';
 import { render } from '@testing-library/react';
 export const store = createStore(reducers, applyMiddleware(thunk, logger))
 
-
 render(
   <Provider store={store}>
     <App/>

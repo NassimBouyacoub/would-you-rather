@@ -10,7 +10,7 @@ export default function users(state = {}, action) {
         return {
             ...state,
             [action.authUser]: {
-                ...[action.authUser],
+                ...state[action.authUser],
                 answers: {
                     ...state[action.authUser].answers,
                     [action.qid]: action.answer
@@ -19,6 +19,7 @@ export default function users(state = {}, action) {
         }
     }
     else if (action.type === "ADD_QUESTION_TO_USER") {
+        console.log(action)
         return {
             ...state,
             [action.author]: {

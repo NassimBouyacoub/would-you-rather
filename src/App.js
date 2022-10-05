@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './Components/Header';
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import { getInitialData } from './Actions/all';
 import React from 'react';
 import Login from './Components/Login'
@@ -14,9 +14,21 @@ import PageNotFound from './Components/PageNotFound';
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
+    this.showCreator = this.showCreator.bind(this);
 
+  }
   componentDidMount() {
     this.props.getInitialData()
+  }
+  showCreator() {
+    console.log(this.state.show)
+    this.state.show = !this.state.show
+    this.forceUpdate()
   }
   render() {
     return (
@@ -34,12 +46,12 @@ class App extends React.Component {
                 this.props.authUser != null
                   ?
                   <>
-                    <Route path='*' element={<PageNotFound />} />
-                    <Route path="/newQuestion" element={<NewQuestion />} />
-                    <Route path="/question/*" element={<QuestionDetails />} />
+
+                    <Route path="/add" element={<NewQuestion />} />
+                    <Route path="/question/:questionId" element={<QuestionDetails />} />
                     <Route path="/leaderboard" element={<Leaderboard />} />
                     <Route path="/" element={<Home />} />
-
+                    <Route element={<PageNotFound />} />
                   </>
                   : <>
                     <Route path='*' element={<Login />} />
@@ -50,9 +62,12 @@ class App extends React.Component {
         </Row>
         <br />
         <Row style={{ textAlign: 'center' }}>
+
           <Col>
-            <p>Created By: <a href='https://fr.linkedin.com/in/nassimbouyacoub'>Nassim</a></p>
+            <Button data-testid="showC" onClick={this.showCreator}>Who created this application?</Button>
           </Col>
+          {this.state.show ? <p data-testid="Creator">this application was created By: <a href='https://fr.linkedin.com/in/nassimbouyacoub'>Nassim</a></p> : null}
+
         </Row>
       </BrowserRouter>
     );

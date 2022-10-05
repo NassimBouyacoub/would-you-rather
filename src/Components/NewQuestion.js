@@ -18,7 +18,6 @@ class NewQuestion extends React.Component {
     }
 
     render() {
-        console.log(this.props.authUser)
         return (
             <Card>
                 <Card.Title>New Question</Card.Title>
@@ -33,12 +32,14 @@ class NewQuestion extends React.Component {
                             <input
                                 type="text"
                                 name="optionOne"
+                                data-testid="optionOne"
                                 onChange={event => this.state.optionOne = event.target.value}
                             />
                             <h3>or</h3>
                             <input
                                 type="text"
                                 name="optionTwo"
+                                data-testid="optionTwo"
                                 onChange={event => this.state.optionTwo = event.target.value}
                             />
                             <br />

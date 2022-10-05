@@ -14,11 +14,10 @@ class Leaderboard extends React.Component {
                     answerCount: Object.values(user.answers).length,
                     questionCount: user.questions.length,
                     total: Object.values(user.answers).length + user.questions.length
-                })).sort((a, b) => a.total - b.total).reverse().map(user =>
-                    <>
-                        <br />
-                        <Card key={user.name} style={{ margin: "1%" }}>
-                            <Card.Header>
+                })).sort((a, b) => a.total - b.total).reverse().map((user, index) =>
+                    
+                        <Card style={{ margin: "1%" }}  key={index}>
+                            <Card.Header data-testid={user.name}>
                                 {user.name}
                             </Card.Header>
                             <Card.Body>
@@ -31,16 +30,16 @@ class Leaderboard extends React.Component {
                                             <Card.Title style={{ border: "4mm solid green" }}>Score: {user.total}</Card.Title>
                                             <Card.Body>
                                                 <p>Number of questions :</p>
-                                                {user.questionCount}
+                                                <label data-testid={user.name+"_question"}> {user.questionCount}</label>
                                                 <p>Number of answers :</p>
-                                                {user.answerCount}
+                                                <label data-testid={user.name+"_answers"}>  {user.answerCount}</label>
                                             </Card.Body>
                                         </Card>
                                     </Col>
                                 </Row>
                             </Card.Body>
                         </Card>
-                    </>
+                    
                 )
                 }
             </Card>
